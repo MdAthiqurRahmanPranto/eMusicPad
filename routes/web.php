@@ -35,10 +35,5 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 
 Route::get('/musician', [MusicianController::class, 'musicians'])->name('musicians');
 Route::get('/musician-form', [MusicianController::class, 'form'])->name('musician.form');
-Route::post('/musician-create', [MusicianController::class, 'create'])->name('musician.create');
-Route::get('/musician-update-form/{id}', [MusicianController::class, 'updateForm'])->name('musician.update.form');
-Route::put('/musician-update/{id}', [MusicianController::class, 'update'])->name('musician.update');
-Route::get('/musician-delete/{id}', [MusicianController::class, 'delete'])->name('musician.delete');
-Route::get('/musician-single/{id}', [MusicianController::class, 'singleView'])->name('musician.single');
 
 Route::get('/padcenter', [PadcenterController::class, 'padcenter'])->name('padcenter');

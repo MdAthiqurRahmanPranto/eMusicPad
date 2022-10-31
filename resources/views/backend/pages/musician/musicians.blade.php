@@ -6,33 +6,35 @@
 <a href="{{route('musician.form')}}" class="btn btn-primary">
     Add Musician
 </a>
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">#</th>
-            <th scope="col">Name</th>
-            <th scope="col">Address</th>
-            <th scope="col">Phone</th>
-            <th scope="col">Band</th>
-            <th scope="col">Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach ($musician as $key=>$data)
-        <tr>
-            <th>{{ $key+1 }}</th>
-            <td>{{ $data->name }}</td>
-            <td>{{ $data->address }}</td>
-            <td>{{ $data->phone }}</td>
-            <td>{{ $data->band }}</td>
-            <td>
-                <a href="{{ route('musician.single', $data->id) }}" class="btn btn-success">View</a>
-                <a href="{{ route('musician.update.form', $data->id) }}" class="btn btn-primary">Update</a>
-                <a href="{{ route('musician.delete', $data->id) }}" class="btn btn-danger">Delete</a>
-            </td>
-        </tr>
-        @endforeach
-    </tbody>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Handle</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
 </table>
 
 

@@ -1,8 +1,8 @@
 @extends('backend.adminpanel')
 
 @section('contents')
-<form class="form-valide" action="{{ route('musician.create') }}" method="post">
-    @csrf
+<form class="form-valide" action="" method="post">
+    
     <label class="col-lg-4 col-form-label" for="val-username">Name <span class="text-danger">*</span></label>
     <input type="text" class="form-control" id="val-username" name="name" placeholder="Enter name.." required>
 
