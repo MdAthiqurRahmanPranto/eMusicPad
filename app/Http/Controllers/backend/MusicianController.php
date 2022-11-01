@@ -18,5 +18,17 @@ class MusicianController extends Controller
         return view("backend.pages.musician.form");
     }
 
+    public function store(Request  $request)
+    {
+        //dd($request->all());
+        musician::create([
+            'name'=> $request-> name,
+            'address'=> $request-> address,
+            'phone'=> $request-> phone,
+            'band'=> $request-> band,
+        ]);
+        return redirect()->back();
+    }
+    
     
 }

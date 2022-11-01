@@ -35,5 +35,7 @@ Route::get('/dashboard', [DashboardController::class, 'dashboard'])->name('dashb
 
 Route::get('/musician', [MusicianController::class, 'musicians'])->name('musicians');
 Route::get('/musician-form', [MusicianController::class, 'form'])->name('musician.form');
+Route::post('/musician-form/store',[MusicianController::class,'store'])->name('musician.form.store');
+
 
 Route::get('/padcenter', [PadcenterController::class, 'padcenter'])->name('padcenter');
