@@ -17,5 +17,6 @@
     <input type="text" class="form-control" id="val-username" name="band" placeholder="Enter band.." required>
 
     <button type="submit" class="btn btn-primary mt-3">Submit</button>
-</form>
+
+  </form>
 @endsection

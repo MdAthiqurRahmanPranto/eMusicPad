@@ -10,7 +10,9 @@ class MusicianController extends Controller
 {
     public function musicians()
     {
-        return view("backend.pages.musician.musicians");
+        $musician_list=musician::all();
+        //dd($musician_list);
+        return view(("backend.pages.musician.musicians"),compact('musician_list'));
     }
 
     public function form()
@@ -27,7 +29,7 @@ class MusicianController extends Controller
             'phone'=> $request-> phone,
             'band'=> $request-> band,
         ]);
-        return redirect()->back();
+        return redirect()->route("musicians");
     }
     
     

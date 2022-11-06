@@ -34,7 +34,7 @@
 <!-- body -->
 
 <body class="main-layout">
-    <footr>
+    <footer>
         <div class="footer ">
             <div class="container">
                 <div class="row">
@@ -63,7 +63,7 @@
 
                     </div>
         </div>
-    </footr>
+    </footer>
 
 
 
