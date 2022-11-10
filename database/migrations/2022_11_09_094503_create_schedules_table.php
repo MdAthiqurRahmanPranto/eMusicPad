@@ -13,12 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('padcenters', function (Blueprint $table) {
+        Schema::create('schedules', function (Blueprint $table) {
             $table->id();
-            $table->string('name',40);
-            $table->string('phone',20);
-            $table->string('location',50);
-            $table->string('image')->nullable;
+            $table->foreignId('padcenter_id')->constrains('padcenters');
+            $table->date('date');
+            $table->string('slot');
             $table->timestamps();
         });
     }
@@ -30,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('padcenters');
+        Schema::dropIfExists('schedules');
     }
 };

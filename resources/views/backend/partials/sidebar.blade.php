@@ -13,7 +13,10 @@
                     <a class="nav-link" href="{{route('padcenter')}}">
                         Pad Center
                     </a>
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('instrument') }}">
+                        Instrument
+                    </a>
+                    <a class="nav-link" href="{{ route('schedule.list') }}">
                         Schedule
                     </a>
                     <a class="nav-link" href="">

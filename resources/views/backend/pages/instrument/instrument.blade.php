@@ -1,35 +1,30 @@
 @extends('backend.adminpanel')
 
 @section('contents')
-<h1>Padcenter List</h1>
-<a href="{{ route('padcenter-form') }}" class="btn btn-primary">Add New Padcenter</a>
+
+<h1>Instrument List</h1>
+<a href="{{ route('instrument.list') }}" class="btn btn-primary">Add New Instrument</a>
 <table class="table table-striped table-dark">
   <thead>
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
-      <th scope="col">Location</th>
-      <th scope="col">Phone</th>
-      <th scope="col">Image</th>
+      <th scope="col">Padcenter</th>
       <th scope="col">Action</th>
+      
     </tr>
   </thead>
        
   
       <tbody>
 
-        @foreach ($pad_center as $data )
+        @foreach ($inst as $data )
         <tr>
           {{-- @dd($data); --}}
           <th>{{$data->id}}</th>
           <td>{{ $data->name }}</td> 
-          <td>{{ $data->location }}</td>
-          <td>{{ $data->phone }}</td>
-          <td>
-            
-            <img width="100px" src="{{ url('/uploads/'.$data->image) }}" alt="">
-          
-          </td>
+          <td>{{ $data->padcenter->name }}</td> 
+         
           <td>
             <a href="" class="btn btn-primary">View</a>
             <a href="" class="btn btn-danger">Delect</a>
@@ -43,6 +38,4 @@
       </tbody>
 
 </table>
-      {{ $pad_center->links('pagination::bootstrap-4') }}
-
 @endsection

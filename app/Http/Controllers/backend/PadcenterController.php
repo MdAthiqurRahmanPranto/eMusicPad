@@ -25,14 +25,25 @@ class PadcenterController extends Controller
        //dd($Request->all());
        $Request->validate([
 
-          'name'=> 'required|unique:padcenters,name'
+          'name'=> 'required|unique:padcenters,name',
+          'image'=> 'required'
        ]);
+
+       $fileName = null;
+       if($Request->hasfile('image'))
+       {
+        //dd($Request->all());
+         //generate name
+         $fileName=date('Ymdhis').'.'.$Request->file('image')->getClientOriginalExtension();
+         $Request->file('image')->storeAs('/uploads',$fileName);
+       }
      
        Padcenter::create([
             //database colume name ----input field Name
             'name'=> $Request -> name,
             'phone'=> $Request -> phone,
             'location'=> $Request -> location,
+            'image'=>  $fileName
             
          
             

@@ -1,14 +1,17 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\AdminController;
 use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\backend\MusicianController;
+use App\Http\Controllers\backend\ScheduleController;
+use App\Http\Controllers\Frontend\BookingController;
+use App\Http\Controllers\backend\DashboardController;
+use App\Http\Controllers\backend\PadcenterController;
+use App\Http\Controllers\backend\InstrumentController;
 use App\Http\Controllers\Frontend\RegistrationController;
 use App\Http\Controllers\Frontend\MusicianHomepageController;
-use App\Http\Controllers\Frontend\BookingController;
-use App\Http\Controllers\backend\AdminController;
-use App\Http\Controllers\backend\DashboardController;
-use App\Http\Controllers\backend\MusicianController;
-use App\Http\Controllers\backend\PadcenterController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -47,3 +50,11 @@ Route::post('/musician-form/store',[MusicianController::class,'store'])->name('m
 Route::get('/padcenter', [PadcenterController::class, 'padcenter'])->name('padcenter');
 Route::get('/padcenter-form',[PadcenterController::class,'list'])->name('padcenter-form');
 Route::post('padcenter/store', [PadcenterController::class, 'store'])->name('padcenter.store');
+
+Route::get('/instrument', [InstrumentController::class, 'instrument'])->name('instrument');
+Route::get('/instrument-list', [InstrumentController::class, 'list'])->name('instrument.list');
+Route::post('/instrument-list/store', [InstrumentController::class, 'store'])->name('instrument.store');
+
+Route::get('/schedule', [ScheduleController::class, 'list'])->name('schedule.list');
+Route::get('/schedule/form', [ScheduleController::class, 'create'])->name('schedule.create');
+Route::post('/schedule/store', [ScheduleController::class, 'store'])->name('schedule.store');
