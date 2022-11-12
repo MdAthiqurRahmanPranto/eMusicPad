@@ -33,26 +33,38 @@
 </head>
 <!-- body -->
 
-<body class="main-layout">
-    <footr>
+<body class="main-layout">  
+    <footer>
         <div class="footer ">
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <form class="contact_bg">
+                        <form action="{{ route('dologin') }}" class="contact_bg" method="post">
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="titlepage">
+                                        
+                                        @if (session()->has('message'))
+
+                                        <div class="alert alert-{{ session('type') }}">
+                
+                                                {{ session('message') }}
+                
+                                        </div>
+                                          
+                                      @endif
+                                        
                                         <h2>Login</h2>
                                     </div>
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Email" type="email" name="Email">
+                                        <input class="contactus" placeholder="Email" type="email" name="email">
                                     </div>
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Password" type="password" name="Password">
+                                        <input class="contactus" placeholder="Password" type="password" name="password">
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send">Submit</button>
+                                        <button class="send"  >Submit</button>
                                     </div>
                                 </div>
                             </div>
@@ -60,7 +72,7 @@
 
                     </div>
         </div>
-    </footr>
+    </footer>
 
 
 

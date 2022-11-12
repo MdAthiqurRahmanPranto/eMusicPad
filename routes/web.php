@@ -2,14 +2,13 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\backend\AdminController;
-use App\Http\Controllers\Frontend\LoginController;
+use App\Http\Controllers\frontend\AuthController;
 use App\Http\Controllers\backend\MusicianController;
 use App\Http\Controllers\backend\ScheduleController;
 use App\Http\Controllers\Frontend\BookingController;
 use App\Http\Controllers\backend\DashboardController;
 use App\Http\Controllers\backend\PadcenterController;
 use App\Http\Controllers\backend\InstrumentController;
-use App\Http\Controllers\Frontend\RegistrationController;
 use App\Http\Controllers\Frontend\MusicianHomepageController;
 
 
@@ -29,11 +28,19 @@ use App\Http\Controllers\Frontend\MusicianHomepageController;
 
 Route::get('/', function () {
     return view('frontend.homepage');
-});
+})->name('homepage');
 
-Route::get('/login-form', [LoginController::class, 'login'])->name('login.form');
+Route::get('/login', [AuthController::class, 'ShowLoginForm'])->name('login');
+Route::post('/login', [AuthController::class, 'ProcessLogin'])->name('dologin');
 
-Route::get('/registration-form', [RegistrationController::class, 'registration'])->name('registration.form');
+Route::get('/registration',[AuthController::class, 'ShowRegistrationForm'])->name('registration');
+Route::post('/registration',[AuthController::class, 'ProcessRegistration']);
+
+
+Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile');
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+
 Route::get('/musician/homepage', [MusicianHomepageController::class, 'index'])->name('musician.homepage');
 Route::get('Booking', [BookingController::class, 'booking'])->name('booking.form');
 

@@ -68,9 +68,16 @@
 
                                             <li> <a href="gallery.html">Music Pads</a> </li>
                                             <li> <a href="contact.html">Contact</a> </li>
+                                            @auth()
+                                            <li> <a href="{{route('profile')}}">Profile</a> </li>
+                                            <li> <a href="{{route('logout')}}">Logout</a> </li>
+                                            @endauth
 
-                                            <li> <a href="{{route('login.form')}}">login</a> </li>
-                                            <li> <a href="{{route('registration.form')}}">Registrations</a> </li>
+                                            @guest()
+                                            <li> <a href="{{route('login')}}">login</a> </li>
+                                            <li> <a href="{{route('registration')}}">Registrations</a> </li>
+                                            @endguest
+                                           
                                             <li> <a class="last_manu" href="#"><img
                                                         src="{{url('frontend/assets/images/search_icon.png')}}"
                                                         alt="#" /></a> </li>
@@ -109,7 +116,7 @@
                                                     using Lorem Ipsum is that it has a more-or-less normal distribution
                                                     of letters, as opposed to using 'Content here, content here', making
                                                     it look</p>
-                                                <a href="{{route('login.form')}}">Login</a> <a href="{{route('registration.form')}}">Registrations</a>
+                                                <a href="{{route('login')}}">Login</a> <a href="{{route('registration')}}">Registrations</a>
                                             </div>
                                         </div>
                                     </div>
@@ -131,7 +138,7 @@
                                                     using Lorem Ipsum is that it has a more-or-less normal distribution
                                                     of letters, as opposed to using 'Content here, content here', making
                                                     it look</p>
-                                                <a href="{{route('login.form')}}">Login</a><a href="#">Registrations </a>
+                                                <a href="{{route('login')}}">Login</a><a href="#">Registrations </a>
                                             </div>
                                         </div>
 
@@ -156,7 +163,7 @@
                                                     using Lorem Ipsum is that it has a more-or-less normal distribution
                                                     of letters, as opposed to using 'Content here, content here', making
                                                     it look</p>
-                                                <a href="{{route('login.form')}}">Login</a> <a href="#">Registrations </a>
+                                                <a href="{{route('login')}}">Login</a> <a href="#">Registrations </a>
                                             </div>
                                         </div>
                                     </div>

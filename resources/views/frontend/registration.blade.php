@@ -39,20 +39,40 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <form class="contact_bg">
+ 
+                    
+                        
+                        <form action="{{ route('registration') }}" class="contact_bg" method="post" >
+                            @csrf
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="titlepage">
                                         <h2>Registration</h2>
                                     </div>
+                                    @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
+                                    
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Name" type="text" name="Name">
+                                        <input class="contactus" placeholder="Name" type="text" name="name" value="{{ old('name') }}">
                                     </div>
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Email" type="text" name="Email">
+                                        <input class="contactus" placeholder="Email" type="text" name="email"  value="{{ old('email') }}" >
                                     </div>
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Password" type="password" name="Password">
+                                        <input class="contactus" placeholder="Phone" type="text" name="phone" value="{{ old('phone') }}" >
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input class="contactus" placeholder="Password" type="password" name="password">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input class="contactus" placeholder="Confirm Password" type="password" name="password_confirmation">
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
                                         <button class="send">Submit</button>
