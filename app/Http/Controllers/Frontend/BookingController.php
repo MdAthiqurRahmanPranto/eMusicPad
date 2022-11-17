@@ -8,6 +8,6 @@ class BookingController extends Controller
 {
     public function booking()
     {
-        return view('frontend.booking');
+        return view('frontend.pages.booking');
     }
 }

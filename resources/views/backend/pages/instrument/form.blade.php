@@ -15,7 +15,7 @@
     
     @csrf
     <label class="col-lg-4 col-form-label">Name <span class="text-danger">*</span> </label>
-    <input required type="text" class="form-control " placeholder="Enter Pad Center Name"  name="name" >
+    <input required type="text" class="form-control " placeholder="Enter Instrument Name"  name="name" >
     <select name="padcenter_id">
         @foreach ($padcenters as $item)
             

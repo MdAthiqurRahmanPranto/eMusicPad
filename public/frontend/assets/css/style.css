@@ -105,7 +105,7 @@
      transition: all .3s ease-in-out;
 }
  img {
-     max-width: 100%;
+     max-width:100%;
      height: auto;
 }
  :focus {
@@ -347,7 +347,9 @@
 }
  .logo {
      float: left;
-     padding-bottom: 6px;
+     padding-bottom: 0px;
+     margin-bottom: 20px;
+     max-width: 70%;
 }
  nav.main-menu {
      float: left;
@@ -972,12 +974,12 @@ transition: all 0.3s ease-in;
 }
  
  .header-top {
-     background:url(../images/banner2.jpg);
+     background:url(../images/menubar.jpg);
+     min-height: 110px;
      background-size: 100% 100%;
      background-repeat: no-repeat;
      padding-bottom: 50px;
     
-     min-height: 980px;
 }
  .header {
      position: absolute;
@@ -1046,6 +1048,9 @@ transition: ease all 0.5s;
      padding: 0;
      margin-top: 90px 
 }
+.carousel-item {
+margin-top: 100px;
+}
  .img_bg {
      text-align: center;
      margin: 0 auto;
@@ -1070,7 +1075,8 @@ transition: ease all 0.5s;
      color: #fff;
 }
  .slider_section {
-     padding-top: 268px;
+     padding-top: 10px;
+     min-height: 670px;
 }
  .black_nolmal {
      font-weight: normal;

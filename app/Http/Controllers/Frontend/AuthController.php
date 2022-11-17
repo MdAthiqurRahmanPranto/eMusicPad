@@ -10,7 +10,7 @@ class AuthController extends Controller
 {
     public function ShowRegistrationForm()
     {
-        return view('frontend.registration');
+        return view('frontend.pages.registration');
     }
     public function ProcessRegistration(Request $request)
     {
@@ -54,23 +54,12 @@ class AuthController extends Controller
         }
 
         
-        
-   
-    
-    
-    
-    
     }
-    
-    
-    
-    
-    
     
     
     public function ShowLoginForm()
     {
-        return view('frontend.login');
+        return view('frontend.pages.login');
     }
     public function Processlogin(Request $request)
     {
@@ -84,8 +73,9 @@ class AuthController extends Controller
         $credentials= $request->except(['_token']);
         if(auth()->attempt( $credentials))
         {
+            //dd($credentials);
             $this->setSuccessMessage('login successfull');
-            return redirect()->route('homepage');
+            return redirect()->route('musicpads');
         }
         else{
             $this->setErrorMessage('Invalid Email Or Password');

@@ -57,12 +57,9 @@
 							</div>
 							<div class="form-group">
 								<span class="form-label">Band Name</span>
-								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
+								<input class="form-control" type="text" placeholder="Enter Your Band Name">
 							</div>
-							<div class="form-group">
-								<span class="form-label">Destination</span>
-								<input class="form-control" type="text" placeholder="Enter ZIP/Location">
-							</div>
+						
 							<div class="row">
 								<div class="col-sm-5">
 									<div class="form-group">
