@@ -9,6 +9,7 @@
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">price</th>
       <th scope="col">Padcenter</th>
       <th scope="col">Action</th>
       
@@ -23,6 +24,7 @@
           {{-- @dd($data); --}}
           <th>{{$data->id}}</th>
           <td>{{ $data->name }}</td> 
+          <td>{{ $data->price}}</td> 
           <td>{{ $data->padcenter->name }}</td> 
          
           <td>

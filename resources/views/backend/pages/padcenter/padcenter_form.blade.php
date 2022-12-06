@@ -17,23 +17,37 @@
     
     <div class="form-group">
         <label for="name">Enter Pad Center Name</label>
-        <input required name="name" type="text" class="form-control" id="name" placeholder="Enter Category Name">
+        <input required name="name" type="text" class="form-control" id="name"  placeholder="Enter Pad Center Name">
     </div>
     
     <div class="form-group">
         <label for="name">Phone</label>
-        <input required name="phone" type="text" class="form-control" id="name" placeholder="Enter Category Name">
+        <input required name="phone" type="text" class="form-control" id="name" placeholder="Enter Phone">
     </div>
     
     <div class="form-group">
         <label for="name">Location</label>
-        <input required name="location" type="text" class="form-control" id="name" placeholder="Enter Category Name">
+        <input required name="location" type="text" class="form-control" id="name" placeholder="Enter Location">
     </div>
+
+    <div class="form-group">
+        <label for="name">Description</label>
+        <textarea class="form-control" name="description" id=""></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Price</label>
+        <input required name="price" type="text" class="form-control" id="name" placeholder="BDT">
+    </div>
+
+    
 
     <div class="form-group">
         <label for="image">Upload Image</label>
         <input name="image" type="file" class="form-control" id="image">
     </div>
+
+   
 
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
@@ -43,13 +57,7 @@
     
     
     
-    {{-- <label class="col-lg-4 col-form-label">Name <span class="text-danger">*</span> </label>
-    <input required type="text" class="form-control " placeholder="Enter Pad Center Name"  name="name" >
-    <label class="col-lg-4 col-form-label">Location <span class="text-danger">*</span> </label>
-    <input type="text" class="form-control " placeholder="Enter Location" name="location" >
-    <label class="col-lg-4 col-form-label">Phone <span class="text-danger">*</span> </label>
-    <input type="text" class="form-control " placeholder="Enter Phone Number" name="phone" >
-    <button  class="btn btn-primary" type="submit">Submit</button> --}}
+
 
 </form>
 

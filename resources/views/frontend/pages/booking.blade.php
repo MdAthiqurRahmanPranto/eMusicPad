@@ -35,47 +35,93 @@
 					<div class="booking-form">
 						<div class="form-header">
 							<h1>Booking Form</h1>
+							@if (session()->has('message'))
+
+							<div class="alert alert-{{session('type')}}">
+									<p>{{ session('message') }}</p>
+							</div>
+								
+							@endif
+							@if ($errors->any())
+                                    <div class="alert alert-danger">
+                                        <ul>
+                                            @foreach ($errors->all() as $error)
+                                                <li>{{ $error }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
+                                @endif
 						</div>
-						<form>
+						<form action="{{ route('booking.process',$padcenter->id) }}" method="post">
+							@csrf
+							
+							
 							<div class="row">
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Name</span>
-										<input class="form-control" type="text" placeholder="Enter your name">
+										<input class="form-control" type="text" name='name' placeholder="Enter your Name" value="{{ auth()->user()->name }}">
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email" placeholder="Enter your email">
+										<input class="form-control" type="email" name='email' placeholder="Enter your email" value="{{ auth()->user()->email}}">
 									</div>
 								</div>
 							</div>
+							
+							
+							
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" placeholder="Enter your phone number">
+								<input class="form-control" type="tel" name='phone' placeholder="Enter your phone number" value="{{ auth()->user()->phone}}">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Band Name</span>
-								<input class="form-control" type="text" placeholder="Enter Your Band Name">
+								<input class="form-control" type="text" name='bandname' placeholder="Enter Your Band Name">
 							</div>
+							<div class="form-group">
+								<span class="form-label">Payment</span>
+								<input class="form-control" type="text" name='payment' value="{{ $padcenter->price }}" placeholder="">
+							</div>
+						
+							
 						
 							<div class="row">
 								<div class="col-sm-5">
 									<div class="form-group">
 										<span class="form-label">Date</span>
-										<input class="form-control" type="date" required>
+										<input class="form-control" name='date' type="date" required>
 									</div>
 								</div>
 								<div class="col-sm-7">
 									<div class="row">
+										
+										
+{{-- 											
+										<div class="col-sm-4">
+											<div class="form-group">
+												<span class="form-label">Pad-Centers</span>
+												<select class="form-control" name='padcenter'>
+													@foreach ($padcenter as $data )
+													<option>{{ $data->name }}</option>
+													@endforeach
+												</select>
+												<span class="select-arrow"></span>
+											</div>
+										</div> --}}
+										
+									
+										
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">Schedule</span>
-												<select class="form-control">
-													<option>9:00am-1:00pm</option>
-													<option>1:00pm-4:00pm</option>
-													<option>4:00pm-8:00Pm</option>
+												<select class="form-control" name='schedhule'>
+													@foreach ($slots as $item)
+														
+													<option value="{{ $item->startingTime }}-{{ $item->endingTime }}">{{ $item->startingTime }}-{{ $item->endingTime }}</option>
+													@endforeach
 													
 												</select>
 												<span class="select-arrow"></span>
@@ -84,31 +130,26 @@
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">Instrument</span>
-												<select class="form-control">
-													<option>Double Padel Drums</option>
-													<option>Wirless Microphone</option>
-													<option>Keyboard Stand</option>
-													<option>Octapad Stand</option>
+												<select class="form-control" name='instrument'>
+													
+												
+													
+													@foreach ($inst as $data)
+													<option>{{ $data->name }}</option>
+													@endforeach
+													
 													
 												</select>
 												<span class="select-arrow"></span>
 											</div>
 										</div>
-										{{-- <div class="col-sm-4">
-											<div class="form-group">
-												<span class="form-label">AM/PM</span>
-												<select class="form-control">
-													<option>AM</option>
-													<option>PM</option>
-												</select>
-												<span class="select-arrow"></span>
-											</div>
-										</div> --}}
+									
+										
 									</div>
 								</div>
 							</div>
 							<div class="form-btn">
-								<button class="submit-btn">Book Now</button>
+								<button tyle='submit' class="submit-btn">Book Now</button>
 							</div>
 						</form>
 					</div>

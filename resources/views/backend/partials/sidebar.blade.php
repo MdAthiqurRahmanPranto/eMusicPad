@@ -16,10 +16,13 @@
                     <a class="nav-link" href="{{ route('instrument') }}">
                         Instrument
                     </a>
-                    <a class="nav-link" href="{{ route('schedule.list') }}">
-                        Schedule
+                    <a class="nav-link" href="{{ route('slot.list') }}">
+                        Slot
                     </a>
-                    <a class="nav-link" href="">
+                    <a class="nav-link" href="{{ route('day.list') }}">
+                        Days
+                    </a>
+                    <a class="nav-link" href="{{ route('booking.list') }}">
                         Booking
                     </a>
                     <a class="nav-link" href="">
@@ -34,3 +37,4 @@
         </nav>
     </div>
     <div id="layoutSidenav_content">
+   

@@ -2,6 +2,10 @@
 
 @section('contents')
 <h1>Padcenter List</h1>
+
+@if(session()->has('message'))
+<p class="alert alert-success">{{session()->get('message')}}</p>
+@endif
 <a href="{{ route('padcenter-form') }}" class="btn btn-primary">Add New Padcenter</a>
 <table class="table table-striped table-dark">
   <thead>
@@ -10,7 +14,9 @@
       <th scope="col">Name</th>
       <th scope="col">Location</th>
       <th scope="col">Phone</th>
+      <th scope="col">Description</th>
       <th scope="col">Image</th>
+      <th scope="col">Price</th>
       <th scope="col">Action</th>
     </tr>
   </thead>
@@ -18,22 +24,25 @@
   
       <tbody>
 
-        @foreach ($pad_center as $data )
+        @foreach ($pad_center as $key=>$data )
         <tr>
           {{-- @dd($data); --}}
-          <th>{{$data->id}}</th>
+          <th>{{$key+1}}</th>
           <td>{{ $data->name }}</td> 
           <td>{{ $data->location }}</td>
           <td>{{ $data->phone }}</td>
+          <td>{{ $data->description }}</td>
+          
           <td>
             
             <img width="100px" src="{{ url('/uploads/'.$data->image) }}" alt="">
           
           </td>
+          <td>{{ $data->price}}</td>
           <td>
-            <a href="" class="btn btn-primary">View</a>
-            <a href="" class="btn btn-danger">Delect</a>
-            <a href="" class="btn btn-success">Edit</a>
+            <a href="{{ route('padcenter.view',$data->id) }}" class="btn btn-primary">View</a>
+            <a href="{{ route('padcenter.delect',$data->id) }}" class="btn btn-danger">Delect</a>
+            <a href="{{ route('padcenter.edit',$data->id) }}" class="btn btn-success">Edit</a>
           </td>
           
         </tr>

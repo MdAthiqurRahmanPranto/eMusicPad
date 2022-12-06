@@ -28,6 +28,7 @@ class AuthController extends Controller
             'email'=>'required|email',
             'phone'=>'required|min:6|max:13',
             'password'=>'required|min:6|confirmed',
+            
 
         ]);
 
@@ -37,7 +38,8 @@ class AuthController extends Controller
             'name'=>$request->input('name'),
             'email'=>strtolower($request->input('email')),
             'phone'=>$request->input('phone'),
-            'password'=>$request->input('password'),
+            'password'=>bcrypt($request->input('password')),
+            'role'=>'user'
         ];
 
         try

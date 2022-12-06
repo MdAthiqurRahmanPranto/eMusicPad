@@ -33,6 +33,7 @@ public function store(Request $request)
     // dd($request->all());
     Instrument::create([
             'name'=> $request-> name,
+            'price'=>$request->price,
             'padcenter_id'=> $request-> padcenter_id,
     ]);
     return redirect()->route('instrument');

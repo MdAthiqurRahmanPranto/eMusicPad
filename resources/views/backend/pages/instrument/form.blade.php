@@ -12,10 +12,18 @@
 @endif
     
     
-    
     @csrf
-    <label class="col-lg-4 col-form-label">Name <span class="text-danger">*</span> </label>
-    <input required type="text" class="form-control " placeholder="Enter Instrument Name"  name="name" >
+    <div>
+        <label class="col-lg-4 col-form-label">Name <span class="text-danger">*</span> </label>
+        <input required type="text" class="form-control " placeholder="Enter Instrument Name"  name="name" >
+    </div>
+
+    <div>
+        <label class="col-lg-4 col-form-label">Price <span class="text-danger">*</span> </label>
+        <input required type="text" class="form-control " placeholder="BDT"  name="price" >
+    </div>
+   
+    
     <select name="padcenter_id">
         @foreach ($padcenters as $item)
             

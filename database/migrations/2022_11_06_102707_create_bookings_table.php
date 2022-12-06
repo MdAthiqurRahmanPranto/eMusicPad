@@ -15,6 +15,16 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('email');
+            $table->integer('phone');
+            $table->string('band')->nullable();
+            $table->date('date');
+            $table->string('padcenter');
+            $table->string('schedhule');
+            $table->string('instrument');
+            $table->string('payment');
+            $table->string('status')->default('pending');
             $table->timestamps();
         });
     }

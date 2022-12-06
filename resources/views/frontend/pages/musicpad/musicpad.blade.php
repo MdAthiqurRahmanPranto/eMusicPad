@@ -76,7 +76,7 @@
             <h2>Pad Center</h2>
           </div>
           <p>Book your pad here.......</p>
-          <a href="Javascript:void(0)">See More</a>
+          <a href="{{route('musicpads.list') }}">See More</a>
         </div>
       </div>
     </div>
