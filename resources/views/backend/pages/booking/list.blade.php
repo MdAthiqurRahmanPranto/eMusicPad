@@ -16,6 +16,7 @@
       <th scope="col">Slot</th>
       <th scope="col">Instrument</th>
       <th scope="col">Payment</th>
+      <th scope="col">Transaction</th>
       <th scope="col">Status</th>
       <th scope="col">Action</th>
       
@@ -36,8 +37,11 @@
           <td>{{ $data->date}}</td> 
           <td>{{ $data->padcenter}}</td> 
           <td>{{ $data->schedhule}}</td> 
-          <td>{{ $data->instrument}}</td> 
+          <td>
+            <a href="{{ route('booking.inslist',$data->id) }}" class="btn btn-primary">View</a>
+          </td> 
           <td>{{ $data->payment}}</td> 
+          <td>{{ $data->transaction_id}}</td>  
           <td>{{ $data->status}}</td> 
 
           {{-- <td>{{ $data->padcenter->name }}</td>  --}}

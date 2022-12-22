@@ -19,18 +19,18 @@
   
       <tbody>
 
-        @foreach ($inst as $data )
+        @foreach ($inst as $key=>$data )
         <tr>
           {{-- @dd($data); --}}
-          <th>{{$data->id}}</th>
+          <th>{{$key+1}}</th>
           <td>{{ $data->name }}</td> 
           <td>{{ $data->price}}</td> 
           <td>{{ $data->padcenter->name }}</td> 
          
           <td>
-            <a href="" class="btn btn-primary">View</a>
-            <a href="" class="btn btn-danger">Delect</a>
-            <a href="" class="btn btn-success">Edit</a>
+          
+            <a href="{{ route('instrument.delete',$data->id) }}" class="btn btn-danger">Delect</a>
+          
           </td>
           
         </tr>

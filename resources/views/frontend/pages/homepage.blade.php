@@ -9,11 +9,8 @@
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
                 <div class="about-box">
                     <h2>About Us</h2>
-                    <p>It is a long established fact that a reader will be distracted by the readable content of a
-                        page when looking at its layout. The point of using Lorem Ipsum is that it has a
-                        more-or-less normal distribution of letters, as opposed to using 'Content here, content
-                        here', making it look</p>
-                    <a href="Javascript:void(0)">Read More</a>
+                    <p>An Online Music Pad Booking & Management System is a website where you can choose your desire pad with slots and book them online. This is very user friendly website that anyone can easily book a pad for practice. Music Pad is like of a rehearsal room where a band or some group of musician can practice their music. In this website anyone can book a music pad via online. </p>
+                    <a href="{{ route('about') }}">Read More</a>
                 </div>
             </div>
             <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">

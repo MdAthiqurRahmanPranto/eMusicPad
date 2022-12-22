@@ -21,7 +21,9 @@ class UsersTableSeeder extends Seeder
             'role'=>'admin',
             'email'=>'admin@gmail.com',
             'password'=>bcrypt('123456'),
-            'phone'=>'01727576212'
+            'phone'=>'01727576212',
+            'band'=>'GreenHeartz'
+
         ]);
     }
 }

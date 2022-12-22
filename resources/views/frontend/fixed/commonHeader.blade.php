@@ -9,8 +9,8 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{url('frontend/assets/images/logo.png')}}"
-                                            alt="#" /></a>
+                                    <a href="{{ route('homepage') }}"><img src="{{url('frontend/assets/images/logo.png')}}"
+                                            alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -21,14 +21,14 @@
                             <div class="limit-box">
                                 <nav class="main-menu ">
                                     <ul class="menu-area-main">
-                                        <li class="active"> <a href="index.html">Home</a> </li>
+                                        <li class="active"> <a href="{{ route('homepage') }}">Home</a> </li>
 
-                                        <li> <a href="about.html">About</a> </li>
+                                        <li> <a href="{{ route('about') }}">About</a> </li>
 
                                         <li> <a href="{{ route('musicpads') }}">Music Pads</a> </li>
-                                        <li> <a href="contact.html">Contact</a> </li>
+                                        <li> <a href="{{ route('contact') }}">Contact</a> </li>
                                         @auth()
-                                        <li> <a href="{{route('profile')}}">Profile</a> </li>
+                                        <li> <a href="{{route('Profile')}}">Profile</a> </li>
                                         <li> <a href="{{route('logout')}}">Logout</a> </li>
                                         @endauth
 
@@ -38,8 +38,8 @@
                                         @endguest
                                        
                                         <li> <a class="last_manu" href="#"><img
-                                                    src="{{url('frontend/assets/images/search_icon.png')}}"
-                                                    alt="#" /></a> </li>
+                                                    src=""
+                                                    alt="" /></a> </li>
 
                                     </ul>
                                 </nav>

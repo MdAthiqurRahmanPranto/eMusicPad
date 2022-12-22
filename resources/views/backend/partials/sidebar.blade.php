@@ -19,21 +19,19 @@
                     <a class="nav-link" href="{{ route('slot.list') }}">
                         Slot
                     </a>
-                    <a class="nav-link" href="{{ route('day.list') }}">
+                    {{-- <a class="nav-link" href="{{ route('day.list') }}">
                         Days
-                    </a>
+                    </a> --}}
                     <a class="nav-link" href="{{ route('booking.list') }}">
                         Booking
                     </a>
-                    <a class="nav-link" href="">
-                        Payment
+                    <a class="nav-link" href="{{ route('report.list') }}">
+                        Report
                     </a>
-                    <a class="nav-link" href="">
-                        Notice
+                    <a class="nav-link" href="{{ route('contact.list') }}">
+                       Contact
                     </a>
-                    <a class="nav-link" href="">
-                        Complain
-                    </a>
+
         </nav>
     </div>
     <div id="layoutSidenav_content">

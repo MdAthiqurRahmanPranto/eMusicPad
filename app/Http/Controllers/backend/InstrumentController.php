@@ -28,7 +28,7 @@ public function store(Request $request)
     // dd($request->all());
 
     $request->validate([
-        'name'=> 'required|unique:instruments,name',
+        'name'=> 'required',
     ]);
     // dd($request->all());
     Instrument::create([
@@ -38,5 +38,17 @@ public function store(Request $request)
     ]);
     return redirect()->route('instrument');
 }
+
+public function deleteInstrument($id){
+    
+    
+    $ints=instrument::find($id)->delete();
+    return redirect()->back();
+
+
+
+}
+
+
     
 }

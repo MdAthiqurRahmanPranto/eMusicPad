@@ -6,6 +6,16 @@
     @csrf
     <div class="form-control">
 
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
+
         <label for="appt">Starting time:</label>
         <input type="time" id="appt" name="startTime">
         

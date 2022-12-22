@@ -66,7 +66,10 @@
                                         <input class="contactus" placeholder="Email" type="text" name="email"  value="{{ old('email') }}" >
                                     </div>
                                     <div class="col-md-12">
-                                        <input class="contactus" placeholder="Phone" type="text" name="phone" value="{{ old('phone') }}" >
+                                        <input class="contactus" placeholder="Phone" type="text" name="phone" value="" >
+                                    </div>
+                                    <div class="col-md-12">
+                                        <input class="contactus" placeholder="Band" type="text" name="band" value="" >
                                     </div>
                                     <div class="col-md-12">
                                         <input class="contactus" placeholder="Password" type="password" name="password">
@@ -75,7 +78,8 @@
                                         <input class="contactus" placeholder="Confirm Password" type="password" name="password_confirmation">
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send">Submit</button>
+                                        <button class="send" style="margin-bottom: 20px">Submit</button><a href="{{ route('homepage') }}" class="btn btn-primary send">Back</a><br>
+                                        <a href="{{ route('login') }}" style=" color: #fff ">Already have account?</a>
                                     </div>
                                 </div>
                             </div>

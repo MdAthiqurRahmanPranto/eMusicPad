@@ -52,7 +52,7 @@
                                     </div>
                                 @endif
 						</div>
-						<form action="{{ route('booking.process',$padcenter->id) }}" method="post">
+						<form action="{{ route('paynow',$padcenter->id) }}" method="post">
 							@csrf
 							
 							
@@ -60,13 +60,13 @@
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Name</span>
-										<input class="form-control" type="text" name='name' placeholder="Enter your Name" value="{{ auth()->user()->name }}">
+										<input class="form-control"  type="text" name='name' placeholder="Enter your Name" value="{{ auth()->user()->name }}" required >
 									</div>
 								</div>
 								<div class="col-sm-6">
 									<div class="form-group">
 										<span class="form-label">Email</span>
-										<input class="form-control" type="email" name='email' placeholder="Enter your email" value="{{ auth()->user()->email}}">
+										<input class="form-control" type="email" name='email' placeholder="Enter your email" value="{{ auth()->user()->email}}" required>
 									</div>
 								</div>
 							</div>
@@ -75,11 +75,11 @@
 							
 							<div class="form-group">
 								<span class="form-label">Phone</span>
-								<input class="form-control" type="tel" name='phone' placeholder="Enter your phone number" value="{{ auth()->user()->phone}}">
+								<input class="form-control"  type="tel" name='phone' placeholder="Enter your phone number" value="{{ auth()->user()->phone}} "required>
 							</div>
 							<div class="form-group">
 								<span class="form-label">Band Name</span>
-								<input class="form-control" type="text" name='bandname' placeholder="Enter Your Band Name">
+								<input class="form-control" type="text" name='bandname' value="{{ auth()->user()->band}}">
 							</div>
 							<div class="form-group">
 								<span class="form-label">Payment</span>
@@ -130,19 +130,30 @@
 										<div class="col-sm-4">
 											<div class="form-group">
 												<span class="form-label">Instrument</span>
-												<select class="form-control" name='instrument'>
 													
 												
 													
 													@foreach ($inst as $data)
-													<option>{{ $data->name }}</option>
+													<input  type="checkbox" value="{{ $data->id }}" name="instruments[]" multiple> <span style="color: #fff">{{ $data->name }}</span> <br>
 													@endforeach
 													
-													
-												</select>
 												<span class="select-arrow"></span>
 											</div>
+										
 										</div>
+									<div class="col-sm-4">
+										<div class="">
+											<span class="form-label">Price</span>
+												
+											
+												
+												@foreach ($inst as $data)
+												<p style="color:#fff">{{ $data->price }}</p>
+												@endforeach
+												
+											
+										</div>
+									</div>
 									
 										
 									</div>

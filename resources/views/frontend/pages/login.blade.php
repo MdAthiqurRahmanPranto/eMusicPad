@@ -64,7 +64,7 @@
                                         <input class="contactus" placeholder="Password" type="password" name="password">
                                     </div>
                                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-                                        <button class="send"  >Submit</button>
+                                        <button class="send"  >Submit</button> <a href="{{ route('homepage') }}" class="btn btn-primary send">Back</a>
                                     </div>
                                 </div>
                             </div>

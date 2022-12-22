@@ -9,8 +9,8 @@
                         <div class="full">
                             <div class="center-desk">
                                 <div class="logo">
-                                    <a href="index.html"><img src="{{url('frontend/assets/images/logo.png')}}"
-                                            alt="#" /></a>
+                                    <a href="{{ route('homepage') }}"><img src="{{url('frontend/assets/images/logo.png')}}"
+                                            alt="logo" /></a>
                                 </div>
                             </div>
                         </div>
@@ -21,14 +21,14 @@
                             <div class="limit-box">
                                 <nav class="main-menu ">
                                     <ul class="menu-area-main">
-                                        <li class="active"> <a href="index.html">Home</a> </li>
+                                        <li class="active"> <a href="{{ route('homepage') }}">Home</a> </li>
 
-                                        <li> <a href="about.html">About</a> </li>
+                                        <li> <a href="{{ route('about') }}">About</a> </li>
 
                                         <li> <a href="{{ route('musicpads') }}">Music Pads</a> </li>
-                                        <li> <a href="contact.html">Contact</a> </li>
+                                        <li> <a href="{{ route('contact') }}">Contact</a> </li>
                                         @auth()
-                                        <li> <a href="{{route('profile')}}">Profile</a> </li>
+                                        <li> <a href="{{route('Profile')}}">Profile-{{ auth()->user()->name }}</a> </li>
                                         <li> <a href="{{route('logout')}}">Logout</a> </li>
                                         @endauth
 
@@ -163,12 +163,13 @@
                                 <div class="text-bg">
                                     <span>The Best</span>
                                     <h1>Online music pad booking</h1>
-                                    <p>It is a long established fact that a reader will be distracted by the
-                                        readable content of a page when looking at its layout. The point of
-                                        using Lorem Ipsum is that it has a more-or-less normal distribution
-                                        of letters, as opposed to using 'Content here, content here', making
-                                        it look</p>
-                                    <a href="{{route('login')}}">Login</a> <a href="{{route('registration')}}">Registrations</a>
+                                    <p> 
+                                        Online Music Pad Booking & Management System is a website, where you can book your 
+                                        Practice pad online. You don’t need to go physically for booking the pad. It requires more time and effort when all procedures are performed manually.Thus, in order to reduce time consumption and human effort the Online Music Pad Booking & Management System application can be applied. </p>
+                                        @guest()
+                                        <a href="{{route('login')}}">Login</a> <a href="{{route('registration')}}">Registrations</a>
+                                        @endguest
+                                       
                                 </div>
                             </div>
                         </div>

@@ -27,7 +27,11 @@ class PadcenterController extends Controller
        $Request->validate([
 
           'name'=> 'required|unique:padcenters,name',
-          'image'=> 'required'
+          'image'=> 'required',
+          'phone'=> 'required|numeric|max:11',
+          'price'=> 'required|numeric'
+
+
        ]);
 
        $fileName = null;

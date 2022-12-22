@@ -25,8 +25,9 @@ class AuthController extends Controller
         $this->validate($request,[
             //input field Name
             'name'=> 'required',
-            'email'=>'required|email',
+            'email'=>'required|email|unique:users,email',
             'phone'=>'required|min:6|max:13',
+            'band'=>'required|',
             'password'=>'required|min:6|confirmed',
             
 
@@ -38,6 +39,7 @@ class AuthController extends Controller
             'name'=>$request->input('name'),
             'email'=>strtolower($request->input('email')),
             'phone'=>$request->input('phone'),
+            'band'=>$request->input('band'),
             'password'=>bcrypt($request->input('password')),
             'role'=>'user'
         ];

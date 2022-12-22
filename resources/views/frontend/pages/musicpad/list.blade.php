@@ -26,7 +26,7 @@
                   </div>
                   
                 
-                  <div class="d-flex justify-content-md-start justify-content-between views-content mt-2">
+                  {{-- <div class="d-flex justify-content-md-start justify-content-between views-content mt-2">
                       <div class="d-flex flex-row align-items-center">
                           <i class="fa fa-eye"></i>
                           <span class="ms-1 views">453674</span>
@@ -42,7 +42,7 @@
                       
                       
                       
-                  </div>
+                  </div> --}}
                   
                   
                   <div class="d-flex flex-row mt-3">

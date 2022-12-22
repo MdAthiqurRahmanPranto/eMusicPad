@@ -24,7 +24,7 @@ class AdminloginController extends Controller
         {
            
             $this->setSuccessMessage('login successfull');
-            return redirect()->route('adminpanel');
+            return redirect()->route('dashboard');
         }
        
         else{

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\frontend;
 
 use App\Models\Padcenter;
+use App\Models\Instrument;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -22,8 +23,9 @@ class MusicpadController extends Controller
 
     public function singleView($padcenter_id)
     {
-        
+        $padcenter=Padcenter::find($padcenter_id);
+        $ints=Instrument::where('padcenter_id',$padcenter->id)->get();
         $musicpad=Padcenter::find($padcenter_id);
-        return view('frontend.pages.musicpad.singleView',compact('musicpad'));
+        return view('frontend.pages.musicpad.singleView',compact('musicpad','ints','padcenter'));
     }
 }

@@ -23,6 +23,20 @@ class SlotController extends Controller
     public function store(Request $request)
     {
      
+       
+       
+       $request->validate([
+        "startTime"=> 'required|unique:slots,startingTime'
+       ]);
+       
+       
+       
+       
+       
+       
+       
+       
+       
         Slot::create([
             
             'startingTime'=>$request->startTime,

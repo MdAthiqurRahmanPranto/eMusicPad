@@ -21,24 +21,34 @@ class BookingController extends Controller
     }
     public function ProcessBooking(Request $request,$padcenter_id)
     {
-        $padcenter = padcenter::find($padcenter_id);
         $request->validate([
             'name'=> 'required',
-            'email'=> 'required|email',
+            'email'=> 'required|email|unique:bookings,email',
+            'phone'=> 'required|numeric',
+            'schedhule'=> 'required|unique:bookings,schedhule',
+            'date'=> 'required|unique:bookings,date',
+            
         ]);
+
+        
+        
+        $padcenter = padcenter::find($padcenter_id);
+   
 
         $data= [
             // 'padcenter_name'=>,
             'name'=>$request->name,
             'email'=>$request->email,
             'phone'=>$request->phone,
+            "user_id"=>auth()->user()->id,
+            "user_email"=>auth()->user()->email,
             'band'=>$request->bandname,
             'date'=>$request->date,
             'padcenter'=>$padcenter->name,
             'schedhule'=>$request->schedhule,
             'instrument'=>$request->instrument,
             'payment'=>$request->payment,
-            
+          
         ];
     
    

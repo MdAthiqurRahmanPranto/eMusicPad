@@ -1,36 +1,47 @@
 @extends('backend.adminpanel')
 
 @section('contents')
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
-    </tr>
-  </tbody>
-</table>
+
+<h1>Dashbaord</h1>
+
+<div class="row">
+  <div class="col-xl-3 col-md-6">
+      <div class="card bg-primary text-white mb-4">
+          <div class="card-body">Total Padcenter</div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+              <span>{{ $totalPadcenter }}</span>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-3 col-md-6">
+      <div class="card bg-warning text-white mb-4">
+          <div class="card-body">Total Musician</div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <span>{{ $totalMusician }}</span>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-3 col-md-6">
+      <div class="card bg-success text-white mb-4">
+          <div class="card-body">Total Booking</div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <span>{{ $totalBooking}}</span>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+          </div>
+      </div>
+  </div>
+  <div class="col-xl-3 col-md-6">
+      <div class="card bg-danger text-white mb-4">
+          <div class="card-body">Total Instrument</div>
+          <div class="card-footer d-flex align-items-center justify-content-between">
+            <span>{{ $totalInstrument }}</span>
+              <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+          </div>
+      </div>
+  </div>
+</div>
 
 
 @endsection
